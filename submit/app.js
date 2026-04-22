@@ -1,13 +1,6 @@
 /**
  * 2026 NFL Draft Pool — Entry Submission Form
- *
- * Workflow:
- *   1. User fills name + 32 picks (player dropdown from ESPN top 100)
- *   2. Optional: toggle TRADE on any pick, enter predicted partner team
- *   3. On submit: generate normalized JSON entry + Venmo deep link + QR code
- *   4. User downloads JSON, pays Venmo, sends JSON to admin
- *
- * No backend. Everything client-side. Admin appends JSON to data/entries.json manually.
+ * No backend. Generates JSON + Venmo deep link client-side.
  */
 
 const VENMO_USER = 'Reagan333';
@@ -17,10 +10,9 @@ const state = {
   players: [],
   draftOrder: [],
   allTeams: [],
-  picks: {}, // { 1: { playerRank, isTrade, tradeFromTeam } }
+  picks: {},   // { pickNum: playerRank }
+  trades: []   // [{ fromTeam, toTeam, atPick }]
 };
-
-// ============== LOAD ==============
 
 async function loadData() {
   const res = await fetch(`players.json?t=${Date.now()}`);
@@ -30,7 +22,7 @@ async function loadData() {
   state.allTeams = data.allTeams;
 }
 
-// ============== RENDER ==============
+// ============== PICKS ==============
 
 function renderPickGrid() {
   const grid = document.getElementById('pickGrid');
@@ -38,90 +30,107 @@ function renderPickGrid() {
     <div class="pick-row" data-pick="${slot.pick}">
       <div class="pick-num">${String(slot.pick).padStart(2, '0')}</div>
       <div class="pick-team">${slot.team}</div>
-      <div class="pick-controls">
-        <select class="player-select" data-pick="${slot.pick}">
-          <option value="">-- select player --</option>
-          ${state.players.map(p =>
-            `<option value="${p.rank}">${p.rank}. ${p.name} (${p.position}, ${p.school})</option>`
-          ).join('')}
-        </select>
-        <button type="button" class="trade-toggle" data-pick="${slot.pick}">trade</button>
-        <select class="trade-partner" data-pick="${slot.pick}">
-          <option value="">trade to...</option>
-          ${state.allTeams.map(t => `<option value="${t}">${t}</option>`).join('')}
-        </select>
-      </div>
+      <select class="player-select" data-pick="${slot.pick}">
+        <option value="">-- select player --</option>
+        ${state.players.map(p =>
+          `<option value="${p.rank}">${p.rank}. ${p.name} (${p.position}, ${p.school})</option>`
+        ).join('')}
+      </select>
       <div class="player-meta" id="meta-${slot.pick}"></div>
     </div>
   `).join('');
 
-  // wire up events
   grid.querySelectorAll('.player-select').forEach(sel => {
     sel.addEventListener('change', () => onPickChange(parseInt(sel.dataset.pick), sel));
-  });
-  grid.querySelectorAll('.trade-toggle').forEach(btn => {
-    btn.addEventListener('click', () => onTradeToggle(parseInt(btn.dataset.pick), btn));
-  });
-  grid.querySelectorAll('.trade-partner').forEach(sel => {
-    sel.addEventListener('change', () => onTradePartnerChange(parseInt(sel.dataset.pick), sel));
   });
 }
 
 function onPickChange(pickNum, selectEl) {
   const rank = selectEl.value ? parseInt(selectEl.value) : null;
   if (!rank) {
-    delete state.picks[pickNum]?.playerRank;
-    if (state.picks[pickNum] && !state.picks[pickNum].isTrade) delete state.picks[pickNum];
+    delete state.picks[pickNum];
   } else {
-    state.picks[pickNum] = state.picks[pickNum] || {};
-    state.picks[pickNum].playerRank = rank;
+    state.picks[pickNum] = rank;
   }
   updateRowDisplay(pickNum);
-  updateSummary();
-}
-
-function onTradeToggle(pickNum, btn) {
-  state.picks[pickNum] = state.picks[pickNum] || {};
-  state.picks[pickNum].isTrade = !state.picks[pickNum].isTrade;
-  if (!state.picks[pickNum].isTrade) state.picks[pickNum].tradeFromTeam = null;
-  btn.classList.toggle('active', state.picks[pickNum].isTrade);
-  updateRowDisplay(pickNum);
-  updateSummary();
-}
-
-function onTradePartnerChange(pickNum, sel) {
-  if (!state.picks[pickNum]) state.picks[pickNum] = {};
-  state.picks[pickNum].tradeFromTeam = sel.value || null;
   updateSummary();
 }
 
 function updateRowDisplay(pickNum) {
   const row = document.querySelector(`.pick-row[data-pick="${pickNum}"]`);
   const meta = document.getElementById(`meta-${pickNum}`);
-  const pick = state.picks[pickNum];
-
-  row.classList.toggle('has-pick', !!(pick && pick.playerRank));
-  row.classList.toggle('trade', !!(pick && pick.isTrade));
-
-  if (pick && pick.playerRank) {
-    const player = state.players.find(p => p.rank === pick.playerRank);
-    meta.textContent = `Rank ${player.rank} ${player.position}`;
-    if (pick.isTrade && pick.tradeFromTeam) {
-      const slot = state.draftOrder.find(s => s.pick === pickNum);
-      meta.textContent += ` · TRADE: ${pick.tradeFromTeam} → ${slot.team}`;
-    } else if (pick.isTrade) {
-      meta.textContent += ` · TRADE: needs partner team`;
-    }
+  const rank = state.picks[pickNum];
+  row.classList.toggle('has-pick', !!rank);
+  if (rank) {
+    const player = state.players.find(p => p.rank === rank);
+    meta.textContent = `Rank ${player.rank} · ${player.position} · ${player.school}`;
   } else {
     meta.textContent = '';
   }
 }
 
+// ============== TRADES ==============
+
+document.getElementById('addTradeBtn').addEventListener('click', addTrade);
+
+function addTrade() {
+  state.trades.push({ fromTeam: '', toTeam: '', atPick: '' });
+  renderTrades();
+  updateSummary();
+}
+
+function removeTrade(idx) {
+  state.trades.splice(idx, 1);
+  renderTrades();
+  updateSummary();
+}
+
+function updateTrade(idx, field, value) {
+  state.trades[idx][field] = field === 'atPick' ? (value ? parseInt(value) : '') : value;
+  updateSummary();
+}
+
+function renderTrades() {
+  const list = document.getElementById('tradesList');
+  if (!state.trades.length) {
+    list.innerHTML = '';
+    return;
+  }
+  list.innerHTML = state.trades.map((t, i) => `
+    <div class="trade-row">
+      <span class="trade-label">From</span>
+      <select onchange="updateTrade(${i}, 'fromTeam', this.value)">
+        <option value="">team...</option>
+        ${state.allTeams.map(team =>
+          `<option value="${team}" ${t.fromTeam === team ? 'selected' : ''}>${team}</option>`
+        ).join('')}
+      </select>
+      <span class="arrow">&rarr;</span>
+      <select onchange="updateTrade(${i}, 'toTeam', this.value)">
+        <option value="">team...</option>
+        ${state.allTeams.map(team =>
+          `<option value="${team}" ${t.toTeam === team ? 'selected' : ''}>${team}</option>`
+        ).join('')}
+      </select>
+      <input type="number" class="pick-input" min="1" max="32"
+             placeholder="pick #" value="${t.atPick}"
+             onchange="updateTrade(${i}, 'atPick', this.value)" />
+      <button type="button" class="remove-btn" onclick="removeTrade(${i})">&times;</button>
+    </div>
+  `).join('');
+}
+
+// expose for inline handlers
+window.updateTrade = updateTrade;
+window.removeTrade = removeTrade;
+
+// ============== SUMMARY ==============
+
 function updateSummary() {
-  const filled = Object.values(state.picks).filter(p => p.playerRank).length;
-  const trades = Object.values(state.picks).filter(p => p.isTrade && p.tradeFromTeam).length;
+  const filled = Object.keys(state.picks).length;
+  const validTrades = state.trades.filter(t => t.fromTeam && t.toTeam && t.atPick).length;
   document.getElementById('filledCount').textContent = filled;
-  document.getElementById('tradeCount').textContent = trades;
+  document.getElementById('tradeCount').textContent = validTrades;
   document.getElementById('generateBtn').disabled =
     filled < 32 || !document.getElementById('name').value.trim();
 }
@@ -136,11 +145,10 @@ function generateEntry() {
   const name = document.getElementById('name').value.trim();
   if (!name) return;
 
-  // Build picks array in pool format
   const picks = state.draftOrder.map(slot => {
-    const pick = state.picks[slot.pick];
-    if (!pick || !pick.playerRank) return null;
-    const player = state.players.find(p => p.rank === pick.playerRank);
+    const rank = state.picks[slot.pick];
+    if (!rank) return null;
+    const player = state.players.find(p => p.rank === rank);
     return {
       pick: slot.pick,
       team: slot.team,
@@ -149,34 +157,29 @@ function generateEntry() {
     };
   }).filter(Boolean);
 
-  // Build trade predictions
-  const tradePredictions = [];
-  Object.entries(state.picks).forEach(([pickNum, pick]) => {
-    if (pick.isTrade && pick.tradeFromTeam) {
-      const slot = state.draftOrder.find(s => s.pick === parseInt(pickNum));
-      tradePredictions.push({
-        fromTeam: pick.tradeFromTeam,
-        toTeam: slot.team,
-        atPick: parseInt(pickNum)
-      });
-    }
-  });
-
   if (picks.length !== 32) {
     alert(`You only have ${picks.length}/32 picks. Fill all 32 before generating.`);
     return;
   }
 
-  // Validate: no duplicate players
   const playerNames = picks.map(p => p.player);
   const dupes = playerNames.filter((n, i) => playerNames.indexOf(n) !== i);
   if (dupes.length) {
-    alert(`Duplicate player(s) detected: ${[...new Set(dupes)].join(', ')}. Each player can only be picked once.`);
+    alert(`Duplicate player(s): ${[...new Set(dupes)].join(', ')}. Each player can only be picked once.`);
     return;
   }
 
+  const tradePredictions = state.trades
+    .filter(t => t.fromTeam && t.toTeam && t.atPick)
+    .map(t => ({
+      fromTeam: t.fromTeam,
+      toTeam: t.toTeam,
+      atPick: t.atPick
+    }));
+
   const entry = {
-    id: name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '') + '-' + Date.now().toString(36),
+    id: name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')
+        + '-' + Date.now().toString(36),
     name,
     submittedAt: new Date().toISOString(),
     picks,
@@ -190,11 +193,9 @@ function showResult(entry) {
   const panel = document.getElementById('resultPanel');
   panel.classList.add('show');
 
-  // Show JSON
   const jsonStr = JSON.stringify(entry, null, 2);
   document.getElementById('jsonPreview').textContent = jsonStr;
 
-  // Download button
   document.getElementById('downloadBtn').onclick = () => {
     const blob = new Blob([jsonStr], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
@@ -207,16 +208,9 @@ function showResult(entry) {
     URL.revokeObjectURL(url);
   };
 
-  // Venmo deep link
   const venmoNote = encodeURIComponent(`2026 NFL Draft Pool entry: ${entry.name}`);
   const venmoUrl = `https://account.venmo.com/payment-link?audience=private&amount=${ENTRY_FEE}&note=${venmoNote}&recipients=${VENMO_USER}&txn=pay`;
   document.getElementById('venmoBtn').href = venmoUrl;
-
-  // QR code (uses qrcode.js library)
-  const canvas = document.getElementById('qr-canvas');
-  if (window.QRCode) {
-    QRCode.toCanvas(canvas, venmoUrl, { width: 180, margin: 1, color: { dark: '#000', light: '#fff' } });
-  }
 
   panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
@@ -227,6 +221,7 @@ async function init() {
   try {
     await loadData();
     renderPickGrid();
+    renderTrades();
     updateSummary();
   } catch (err) {
     console.error(err);

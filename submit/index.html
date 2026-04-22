@@ -9,18 +9,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0a0f0d;
-    --bg-2: #10181a;
-    --surface: #162021;
-    --surface-2: #1d2a2c;
-    --line: #2a3a3d;
-    --ink: #eef2f0;
-    --ink-dim: #94a3a0;
-    --ink-low: #5a6b68;
-    --accent: #d4ff3a;
-    --accent-2: #ff4538;
-    --gold: #c9a24b;
-    --good: #6fe394;
+    --bg: #0a0f0d; --bg-2: #10181a; --surface: #162021; --surface-2: #1d2a2c;
+    --line: #2a3a3d; --ink: #eef2f0; --ink-dim: #94a3a0; --ink-low: #5a6b68;
+    --accent: #d4ff3a; --accent-2: #ff4538; --gold: #c9a24b; --good: #6fe394;
     --venmo: #3d95ce;
     --font-display: 'Bebas Neue', Impact, sans-serif;
     --font-editorial: 'Fraunces', Georgia, serif;
@@ -85,15 +76,11 @@
   }
   .nav-link:hover { color: var(--accent); }
 
-  main {
-    max-width: 900px; margin: 0 auto; padding: 2rem;
-  }
+  main { max-width: 900px; margin: 0 auto; padding: 2rem; }
 
   .step {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    margin-bottom: 1.5rem;
-    overflow: hidden;
+    background: var(--surface); border: 1px solid var(--line);
+    margin-bottom: 1.5rem; overflow: hidden;
   }
   .step-header {
     padding: 1rem 1.25rem;
@@ -118,30 +105,26 @@
     letter-spacing: 0.15em; text-transform: uppercase;
     color: var(--ink-dim); margin-bottom: 0.4rem;
   }
-  input[type="text"], input[type="email"], select {
+  input[type="text"], select {
     width: 100%; padding: 0.7rem 0.9rem;
-    background: var(--bg-2);
-    color: var(--ink);
+    background: var(--bg-2); color: var(--ink);
     border: 1px solid var(--line);
     font-family: var(--font-mono); font-size: 0.9rem;
     border-radius: 0;
   }
-  input[type="text"]:focus, input[type="email"]:focus, select:focus {
+  input[type="text"]:focus, select:focus {
     outline: none; border-color: var(--accent);
   }
 
   .pick-row {
     display: grid;
     grid-template-columns: 50px 60px 1fr;
-    gap: 0.75rem;
-    align-items: center;
+    gap: 0.75rem; align-items: center;
     padding: 0.75rem;
     border-bottom: 1px solid rgba(42,58,61,0.4);
   }
   .pick-row:last-child { border-bottom: none; }
   .pick-row.has-pick { background: rgba(212,255,58,0.04); }
-  .pick-row.trade { background: rgba(201,162,75,0.05); }
-
   .pick-num {
     font-family: var(--font-display); font-size: 1.5rem;
     color: var(--ink-dim); text-align: center;
@@ -150,39 +133,61 @@
     font-family: var(--font-display); font-size: 1.2rem;
     color: var(--ink); text-align: center;
   }
-  .pick-controls {
-    display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;
-  }
-  .player-select { flex: 1; min-width: 200px; }
-  .trade-toggle {
-    font-family: var(--font-mono); font-size: 0.65rem;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    background: transparent; color: var(--ink-low);
-    border: 1px solid var(--line);
-    padding: 0.5rem 0.7rem; cursor: pointer;
-    transition: all 0.15s;
-  }
-  .trade-toggle:hover { color: var(--gold); border-color: var(--gold); }
-  .trade-toggle.active {
-    background: var(--gold); color: #0a0f0d; border-color: var(--gold);
-  }
-  .trade-partner {
-    width: 90px;
-    padding: 0.5rem;
-    background: var(--bg-2);
-    color: var(--ink);
-    border: 1px solid var(--gold);
-    font-family: var(--font-mono); font-size: 0.85rem;
-    display: none;
-  }
-  .pick-row.trade .trade-partner { display: block; }
-
   .player-meta {
     font-family: var(--font-mono); font-size: 0.65rem;
     color: var(--ink-low); margin-top: 0.2rem;
-    grid-column: 3;
-    padding-left: 0.4rem;
+    grid-column: 3; padding-left: 0.4rem;
   }
+
+  /* TRADES SECTION */
+  .trades-list { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem; }
+  .trade-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto 1fr auto auto;
+    gap: 0.5rem; align-items: center;
+    padding: 0.6rem;
+    background: var(--bg-2);
+    border: 1px solid var(--gold);
+  }
+  .trade-row .arrow {
+    font-family: var(--font-display);
+    font-size: 1.4rem; color: var(--gold);
+  }
+  .trade-row select { padding: 0.5rem; font-size: 0.85rem; }
+  .trade-row .pick-input {
+    width: 70px; padding: 0.5rem; text-align: center;
+    background: var(--bg); color: var(--ink);
+    border: 1px solid var(--line); font-family: var(--font-mono);
+  }
+  .trade-row .remove-btn {
+    background: transparent; border: 1px solid var(--accent-2);
+    color: var(--accent-2); padding: 0.4rem 0.6rem;
+    font-family: var(--font-mono); font-size: 0.7rem;
+    cursor: pointer;
+  }
+  .trade-row .remove-btn:hover { background: var(--accent-2); color: white; }
+  .trade-label {
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--ink-dim); letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .add-trade-btn {
+    background: transparent;
+    border: 1px dashed var(--gold);
+    color: var(--gold);
+    padding: 0.7rem 1rem;
+    font-family: var(--font-mono); font-size: 0.75rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    cursor: pointer; width: 100%;
+    transition: all 0.15s;
+  }
+  .add-trade-btn:hover { background: rgba(201,162,75,0.1); }
+  .trades-help {
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: var(--ink-dim); margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  .trades-help strong { color: var(--gold); }
 
   .summary-bar {
     position: sticky; bottom: 0;
@@ -194,9 +199,7 @@
     z-index: 5;
     box-shadow: 0 -8px 24px rgba(0,0,0,0.4);
   }
-  .summary-stats {
-    font-family: var(--font-mono); font-size: 0.85rem;
-  }
+  .summary-stats { font-family: var(--font-mono); font-size: 0.85rem; }
   .summary-stats strong {
     color: var(--accent); font-family: var(--font-display);
     font-size: 1.4rem; margin-right: 0.3rem;
@@ -242,14 +245,10 @@
   }
   .venmo-card { border-color: var(--venmo); }
   .venmo-card h3 { color: var(--venmo); }
-  .qr-wrap {
-    background: white; padding: 12px; display: inline-block; margin: 0.5rem 0;
-  }
-  #qr-canvas { display: block; }
   .btn-download, .btn-venmo {
     display: inline-block; width: 100%;
-    padding: 0.7rem 1rem; margin-top: 0.6rem;
-    font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700;
+    padding: 0.9rem 1rem; margin-top: 0.6rem;
+    font-family: var(--font-mono); font-size: 0.85rem; font-weight: 700;
     letter-spacing: 0.12em; text-transform: uppercase;
     border: none; cursor: pointer; text-align: center; text-decoration: none;
   }
@@ -260,20 +259,10 @@
   pre.json-preview {
     background: #000; color: var(--accent);
     padding: 0.8rem; font-size: 0.7rem;
-    max-height: 200px; overflow: auto;
+    max-height: 240px; overflow: auto;
     border: 1px solid var(--line); margin-top: 0.6rem;
   }
 
-  .legend {
-    font-family: var(--font-mono); font-size: 0.7rem;
-    color: var(--ink-dim); padding: 0.8rem 1.25rem;
-    background: var(--bg-2); border-bottom: 1px solid var(--line);
-  }
-  .legend strong { color: var(--gold); }
-
-  .err {
-    color: var(--accent-2); font-size: 0.8rem; margin-top: 0.5rem;
-  }
   .ok-mark { color: var(--good); }
 
   footer {
@@ -289,7 +278,7 @@
 
 <header class="masthead">
   <div class="brand">
-    <div class="brand-mark">RBL33</div>
+    <div class="brand-mark">RBL 33</div>
     <div class="brand-text">
       <strong>Rebelittle</strong>
       DRAFT POOL &middot; 2026
@@ -303,6 +292,7 @@
 </header>
 
 <main>
+
   <!-- Step 1: Identity -->
   <div class="step">
     <div class="step-header"><div class="step-title"><span class="num">1</span>Who are you?</div></div>
@@ -317,23 +307,34 @@
     <div class="step-header">
       <div class="step-title"><span class="num">2</span>Make your 32 picks</div>
     </div>
-    <div class="legend">
-      Click <strong>TRADE</strong> on any pick to predict it gets traded. Enter the team you think trades up to acquire that slot.
-      Trade scoring: +6 if either team is correct, +10 if both.
-    </div>
     <div id="pickGrid"></div>
+  </div>
+
+  <!-- Step 3: Trades -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-title"><span class="num">3</span>Predict trades (optional)</div>
+    </div>
+    <div class="step-body">
+      <div class="trades-help">
+        Each correct trade is worth <strong>+6 pts</strong> if one team is right, <strong>+10 pts</strong> if both teams are right.<br>
+        Format: <em>Team A trades up to acquire pick X from Team B.</em> The "to" team is the one making the selection.
+      </div>
+      <div class="trades-list" id="tradesList"></div>
+      <button type="button" class="add-trade-btn" id="addTradeBtn">+ Add Trade Prediction</button>
+    </div>
   </div>
 
   <!-- Sticky summary bar -->
   <div class="summary-bar">
     <div class="summary-stats">
       <span><strong id="filledCount">0</strong>/32 picks &middot;</span>
-      <span><strong id="tradeCount">0</strong> trade preds</span>
+      <span><strong id="tradeCount">0</strong> trades</span>
     </div>
     <button class="btn-submit" id="generateBtn" disabled>Generate Entry</button>
   </div>
 
-  <!-- Step 3: Result -->
+  <!-- Step 4: Result -->
   <div class="result-panel" id="resultPanel">
     <h2 class="ok-mark">&check; Entry Ready</h2>
     <p style="color: var(--ink-dim);">
@@ -342,7 +343,6 @@
     </p>
 
     <div class="result-grid">
-      <!-- JSON download card -->
       <div class="result-card">
         <h3>Your Entry JSON</h3>
         <p style="color: var(--ink-dim); font-size: 0.8rem;">
@@ -352,16 +352,15 @@
         <pre class="json-preview" id="jsonPreview"></pre>
       </div>
 
-      <!-- Venmo card -->
       <div class="result-card venmo-card">
         <h3>Pay $5 Entry Fee</h3>
         <p style="color: var(--ink-dim); font-size: 0.8rem;">
-          Pay <strong style="color:var(--venmo);">@Reagan333</strong> on Venmo. Scan QR or tap button below.
+          Pay <strong style="color:var(--venmo);">@Reagan333</strong> on Venmo.
         </p>
-        <div class="qr-wrap">
-          <canvas id="qr-canvas" width="180" height="180"></canvas>
-        </div>
-        <a class="btn-venmo" id="venmoBtn" href="#" target="_blank" rel="noopener">Open Venmo App</a>
+        <a class="btn-venmo" id="venmoBtn" href="#" target="_blank" rel="noopener">Open Venmo</a>
+        <p style="color: var(--ink-low); font-size: 0.7rem; margin-top: 0.8rem; line-height: 1.5;">
+          Tip: include your display name in the Venmo memo so Reagan can match payment to entry.
+        </p>
       </div>
     </div>
   </div>
@@ -372,7 +371,6 @@
   <a href="../" style="color: var(--accent); text-decoration: none;">live tracker</a>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
