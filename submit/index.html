@@ -138,31 +138,7 @@
     color: var(--ink-low); margin-top: 0.2rem;
     grid-column: 3; padding-left: 0.4rem;
   }
-   .scoring-card {
-    background: var(--surface);
-    border: 1px solid var(--line);
-    padding: 1.25rem;
-  }
-  .scoring-card h3 {
-    font-family: var(--font-display);
-    font-size: 1.3rem;
-    letter-spacing: 0.02em;
-    margin-bottom: 0.8rem;
-  }
-  .scoring-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 0.4rem 0;
-    border-bottom: 1px dashed var(--line);
-    font-size: 0.85rem;
-  }
-  .scoring-row:last-child { border-bottom: none; }
-  .scoring-row .pts {
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    color: var(--accent);
-  }
+  
 
   /* TRADES SECTION */
   .trades-list { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem; }
@@ -324,6 +300,29 @@
     <div class="step-body">
       <label for="name">Display name (shown on leaderboard)</label>
       <input type="text" id="name" placeholder="e.g. Reagan, BigDog22, etc." maxlength="40" />
+    </div>
+  </div>
+
+  <!-- Scoring reference card -->
+  <div class="step">
+    <div class="step-header"><div class="step-title">Scoring</div></div>
+    <div class="step-body">
+      <table style="width:100%; border-collapse:collapse; font-family:var(--font-mono); font-size:0.85rem;">
+        <thead>
+          <tr style="border-bottom:1px solid var(--line); color:var(--ink-dim); text-align:left;">
+            <th style="padding:0.5rem 0; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; font-size:0.7rem;">Outcome</th>
+            <th style="padding:0.5rem 0; font-weight:500; letter-spacing:0.1em; text-transform:uppercase; font-size:0.7rem; text-align:right;">Pts</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(42,58,61,0.3);"><td style="padding:0.5rem 0;">Correct Team + Player</td><td style="text-align:right; color:var(--accent); font-family:var(--font-display); font-size:1.2rem;">5</td></tr>
+          <tr style="border-bottom:1px solid rgba(42,58,61,0.3);"><td style="padding:0.5rem 0;">Correct Player + Pick Number</td><td style="text-align:right; color:var(--accent); font-family:var(--font-display); font-size:1.2rem;">4</td></tr>
+          <tr style="border-bottom:1px solid rgba(42,58,61,0.3);"><td style="padding:0.5rem 0;">Correct Position + Team</td><td style="text-align:right; color:var(--accent); font-family:var(--font-display); font-size:1.2rem;">2</td></tr>
+          <tr style="border-bottom:1px solid rgba(42,58,61,0.3);"><td style="padding:0.5rem 0;">Correct Player anywhere in Round 1</td><td style="text-align:right; color:var(--accent); font-family:var(--font-display); font-size:1.2rem;">1</td></tr>
+          <tr style="border-bottom:1px solid rgba(42,58,61,0.3);"><td style="padding:0.5rem 0; color:var(--gold);">Correct Team Trade (one team)</td><td style="text-align:right; color:var(--gold); font-family:var(--font-display); font-size:1.2rem;">6</td></tr>
+          <tr><td style="padding:0.5rem 0; color:var(--gold);">Correct Team Trade (both teams)</td><td style="text-align:right; color:var(--gold); font-family:var(--font-display); font-size:1.2rem;">10</td></tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
