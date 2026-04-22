@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Submit Entry | 2026 NFL Draft Pool</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IBM+Plex+Mono:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0f0d;
+    --bg-2: #10181a;
+    --surface: #162021;
+    --surface-2: #1d2a2c;
+    --line: #2a3a3d;
+    --ink: #eef2f0;
+    --ink-dim: #94a3a0;
+    --ink-low: #5a6b68;
+    --accent: #d4ff3a;
+    --accent-2: #ff4538;
+    --gold: #c9a24b;
+    --good: #6fe394;
+    --venmo: #3d95ce;
+    --font-display: 'Bebas Neue', Impact, sans-serif;
+    --font-editorial: 'Fraunces', Georgia, serif;
+    --font-mono: 'IBM Plex Mono', 'SF Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg); color: var(--ink);
+    font-family: var(--font-mono); font-size: 14px; line-height: 1.5;
+    min-height: 100vh; -webkit-font-smoothing: antialiased;
+  }
+  body {
+    background-image:
+      radial-gradient(ellipse at top, rgba(212,255,58,0.04) 0%, transparent 50%),
+      radial-gradient(ellipse at bottom right, rgba(61,165,255,0.03) 0%, transparent 60%);
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.35; pointer-events: none; z-index: 1; mix-blend-mode: overlay;
+  }
+  main, header { position: relative; z-index: 2; }
+
+  header.masthead {
+    border-bottom: 1px solid var(--line);
+    padding: 2.5rem 2rem 2rem;
+    background: linear-gradient(180deg, var(--bg-2) 0%, transparent 100%);
+    text-align: center;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem;
+  }
+  .brand-mark {
+    width: 54px; height: 54px;
+    background: var(--accent); color: #0a0f0d;
+    display: grid; place-items: center;
+    font-family: var(--font-display); font-size: 2rem;
+    transform: skew(-8deg); box-shadow: 4px 4px 0 var(--accent-2);
+  }
+  .brand-text {
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: var(--ink-dim); letter-spacing: 0.2em; text-transform: uppercase;
+    text-align: left;
+  }
+  .brand-text strong { display: block; color: var(--ink); font-size: 0.9rem; }
+  h1.title {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 0.9; letter-spacing: -0.01em;
+  }
+  h1.title .green { color: var(--accent); }
+  h1.title .small {
+    display: block;
+    font-family: var(--font-editorial); font-style: italic;
+    font-size: 0.25em; font-weight: 500; letter-spacing: 0.02em;
+    color: var(--ink-dim); margin-top: 0.5rem;
+  }
+  .nav-link {
+    display: inline-block; margin-top: 1rem;
+    font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--ink-dim); text-decoration: none;
+  }
+  .nav-link:hover { color: var(--accent); }
+
+  main {
+    max-width: 900px; margin: 0 auto; padding: 2rem;
+  }
+
+  .step {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .step-header {
+    padding: 1rem 1.25rem;
+    background: linear-gradient(90deg, var(--surface) 0%, var(--surface-2) 100%);
+    border-bottom: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .step-title {
+    font-family: var(--font-display); font-size: 1.4rem; letter-spacing: 0.02em;
+  }
+  .step-title .num {
+    display: inline-block; width: 28px; height: 28px;
+    background: var(--accent); color: #0a0f0d;
+    text-align: center; line-height: 28px;
+    margin-right: 0.6rem; transform: skew(-6deg);
+  }
+  .step-body { padding: 1.25rem; }
+
+  label {
+    display: block;
+    font-family: var(--font-mono); font-size: 0.7rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--ink-dim); margin-bottom: 0.4rem;
+  }
+  input[type="text"], input[type="email"], select {
+    width: 100%; padding: 0.7rem 0.9rem;
+    background: var(--bg-2);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    font-family: var(--font-mono); font-size: 0.9rem;
+    border-radius: 0;
+  }
+  input[type="text"]:focus, input[type="email"]:focus, select:focus {
+    outline: none; border-color: var(--accent);
+  }
+
+  .pick-row {
+    display: grid;
+    grid-template-columns: 50px 60px 1fr;
+    gap: 0.75rem;
+    align-items: center;
+    padding: 0.75rem;
+    border-bottom: 1px solid rgba(42,58,61,0.4);
+  }
+  .pick-row:last-child { border-bottom: none; }
+  .pick-row.has-pick { background: rgba(212,255,58,0.04); }
+  .pick-row.trade { background: rgba(201,162,75,0.05); }
+
+  .pick-num {
+    font-family: var(--font-display); font-size: 1.5rem;
+    color: var(--ink-dim); text-align: center;
+  }
+  .pick-team {
+    font-family: var(--font-display); font-size: 1.2rem;
+    color: var(--ink); text-align: center;
+  }
+  .pick-controls {
+    display: flex; gap: 0.5rem; align-items: center; flex-wrap: wrap;
+  }
+  .player-select { flex: 1; min-width: 200px; }
+  .trade-toggle {
+    font-family: var(--font-mono); font-size: 0.65rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    background: transparent; color: var(--ink-low);
+    border: 1px solid var(--line);
+    padding: 0.5rem 0.7rem; cursor: pointer;
+    transition: all 0.15s;
+  }
+  .trade-toggle:hover { color: var(--gold); border-color: var(--gold); }
+  .trade-toggle.active {
+    background: var(--gold); color: #0a0f0d; border-color: var(--gold);
+  }
+  .trade-partner {
+    width: 90px;
+    padding: 0.5rem;
+    background: var(--bg-2);
+    color: var(--ink);
+    border: 1px solid var(--gold);
+    font-family: var(--font-mono); font-size: 0.85rem;
+    display: none;
+  }
+  .pick-row.trade .trade-partner { display: block; }
+
+  .player-meta {
+    font-family: var(--font-mono); font-size: 0.65rem;
+    color: var(--ink-low); margin-top: 0.2rem;
+    grid-column: 3;
+    padding-left: 0.4rem;
+  }
+
+  .summary-bar {
+    position: sticky; bottom: 0;
+    background: var(--bg-2);
+    border: 1px solid var(--accent);
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    display: flex; align-items: center; justify-content: space-between;
+    z-index: 5;
+    box-shadow: 0 -8px 24px rgba(0,0,0,0.4);
+  }
+  .summary-stats {
+    font-family: var(--font-mono); font-size: 0.85rem;
+  }
+  .summary-stats strong {
+    color: var(--accent); font-family: var(--font-display);
+    font-size: 1.4rem; margin-right: 0.3rem;
+  }
+  .btn-submit {
+    background: var(--accent); color: #0a0f0d;
+    border: none; padding: 0.9rem 1.8rem;
+    font-family: var(--font-display); font-size: 1.4rem;
+    letter-spacing: 0.05em; cursor: pointer;
+    transform: skew(-6deg);
+    transition: all 0.15s;
+  }
+  .btn-submit:hover { background: #b8e530; box-shadow: 4px 4px 0 var(--accent-2); }
+  .btn-submit:disabled {
+    background: var(--surface-2); color: var(--ink-low);
+    cursor: not-allowed; box-shadow: none;
+  }
+
+  .result-panel {
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    padding: 1.5rem;
+    margin-top: 2rem;
+    display: none;
+  }
+  .result-panel.show { display: block; }
+  .result-panel h2 {
+    font-family: var(--font-display); font-size: 2rem;
+    color: var(--accent); margin-bottom: 1rem;
+  }
+  .result-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  @media (max-width: 700px) {
+    .result-grid { grid-template-columns: 1fr; }
+  }
+  .result-card {
+    background: var(--bg-2); border: 1px solid var(--line); padding: 1rem;
+  }
+  .result-card h3 {
+    font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 0.6rem;
+  }
+  .venmo-card { border-color: var(--venmo); }
+  .venmo-card h3 { color: var(--venmo); }
+  .qr-wrap {
+    background: white; padding: 12px; display: inline-block; margin: 0.5rem 0;
+  }
+  #qr-canvas { display: block; }
+  .btn-download, .btn-venmo {
+    display: inline-block; width: 100%;
+    padding: 0.7rem 1rem; margin-top: 0.6rem;
+    font-family: var(--font-mono); font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    border: none; cursor: pointer; text-align: center; text-decoration: none;
+  }
+  .btn-download { background: var(--accent); color: #0a0f0d; }
+  .btn-venmo { background: var(--venmo); color: white; }
+  .btn-download:hover { background: #b8e530; }
+  .btn-venmo:hover { background: #2e7eb5; }
+  pre.json-preview {
+    background: #000; color: var(--accent);
+    padding: 0.8rem; font-size: 0.7rem;
+    max-height: 200px; overflow: auto;
+    border: 1px solid var(--line); margin-top: 0.6rem;
+  }
+
+  .legend {
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: var(--ink-dim); padding: 0.8rem 1.25rem;
+    background: var(--bg-2); border-bottom: 1px solid var(--line);
+  }
+  .legend strong { color: var(--gold); }
+
+  .err {
+    color: var(--accent-2); font-size: 0.8rem; margin-top: 0.5rem;
+  }
+  .ok-mark { color: var(--good); }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 2rem; text-align: center;
+    font-family: var(--font-mono); font-size: 0.7rem;
+    color: var(--ink-low); letter-spacing: 0.15em; text-transform: uppercase;
+    margin-top: 4rem;
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="brand">
+    <div class="brand-mark">R7</div>
+    <div class="brand-text">
+      <strong>REBEL LITTLE</strong>
+      DRAFT POOL &middot; 2026
+    </div>
+  </div>
+  <h1 class="title">
+    SUBMIT YOUR <span class="green">ENTRY</span>
+    <span class="small">$5 entry. Pick all 32. Predict trades for bonus points.</span>
+  </h1>
+  <a href="../" class="nav-link">&larr; back to live tracker</a>
+</header>
+
+<main>
+  <!-- Step 1: Identity -->
+  <div class="step">
+    <div class="step-header"><div class="step-title"><span class="num">1</span>Who are you?</div></div>
+    <div class="step-body">
+      <label for="name">Display name (shown on leaderboard)</label>
+      <input type="text" id="name" placeholder="e.g. Reagan, BigDog22, etc." maxlength="40" />
+    </div>
+  </div>
+
+  <!-- Step 2: Picks -->
+  <div class="step">
+    <div class="step-header">
+      <div class="step-title"><span class="num">2</span>Make your 32 picks</div>
+    </div>
+    <div class="legend">
+      Click <strong>TRADE</strong> on any pick to predict it gets traded. Enter the team you think trades up to acquire that slot.
+      Trade scoring: +6 if either team is correct, +10 if both.
+    </div>
+    <div id="pickGrid"></div>
+  </div>
+
+  <!-- Sticky summary bar -->
+  <div class="summary-bar">
+    <div class="summary-stats">
+      <span><strong id="filledCount">0</strong>/32 picks &middot;</span>
+      <span><strong id="tradeCount">0</strong> trade preds</span>
+    </div>
+    <button class="btn-submit" id="generateBtn" disabled>Generate Entry</button>
+  </div>
+
+  <!-- Step 3: Result -->
+  <div class="result-panel" id="resultPanel">
+    <h2 class="ok-mark">&check; Entry Ready</h2>
+    <p style="color: var(--ink-dim);">
+      Two steps to finish: <strong style="color: var(--accent);">(1)</strong> pay the $5 entry fee via Venmo,
+      <strong style="color: var(--accent);">(2)</strong> download the JSON and send it to Reagan via text or DM.
+    </p>
+
+    <div class="result-grid">
+      <!-- JSON download card -->
+      <div class="result-card">
+        <h3>Your Entry JSON</h3>
+        <p style="color: var(--ink-dim); font-size: 0.8rem;">
+          Click download, then send the file to Reagan.
+        </p>
+        <button class="btn-download" id="downloadBtn">&darr; Download entry.json</button>
+        <pre class="json-preview" id="jsonPreview"></pre>
+      </div>
+
+      <!-- Venmo card -->
+      <div class="result-card venmo-card">
+        <h3>Pay $5 Entry Fee</h3>
+        <p style="color: var(--ink-dim); font-size: 0.8rem;">
+          Pay <strong style="color:var(--venmo);">@Reagan333</strong> on Venmo. Scan QR or tap button below.
+        </p>
+        <div class="qr-wrap">
+          <canvas id="qr-canvas" width="180" height="180"></canvas>
+        </div>
+        <a class="btn-venmo" id="venmoBtn" href="#" target="_blank" rel="noopener">Open Venmo App</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  Submissions are reviewed and added manually &middot;
+  <a href="../" style="color: var(--accent); text-decoration: none;">live tracker</a>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
