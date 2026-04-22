@@ -578,6 +578,87 @@
   .mono { font-family: var(--font-mono); }
   .tnum { font-variant-numeric: tabular-nums; }
 </style>
+  <style>
+/* ============== MOBILE FIXES ============== */
+@media (max-width: 768px) {
+  /* Masthead: tighten padding, shrink meta blocks that overflow */
+  .masthead, header.masthead {
+    padding: 1.25rem 1rem 1rem !important;
+    display: flex; flex-direction: column; align-items: stretch;
+  }
+  .masthead-left, .masthead-right {
+    width: 100% !important; text-align: center; margin: 0.5rem 0;
+  }
+
+  /* Title: fit on small screens */
+  h1.title, .masthead h1 {
+    font-size: clamp(2rem, 9vw, 2.8rem) !important;
+    line-height: 0.95;
+  }
+  h1.title .small, .masthead h1 .small {
+    font-size: 0.75rem !important;
+    padding: 0 0.5rem;
+  }
+
+  /* Top status/meta row: wrap instead of overflow */
+  .status-bar, .meta-bar, .nav-strip, .top-meta {
+    flex-wrap: wrap !important;
+    justify-content: center;
+    gap: 0.4rem 1rem !important;
+    font-size: 0.7rem !important;
+    padding: 0.6rem 0.8rem !important;
+  }
+
+  /* Picks-made giant number block: shrink */
+  .picks-made, .picks-meta, .tracker-meta {
+    font-size: 0.7rem !important;
+  }
+  .picks-made .big, .picks-meta strong, .tracker-meta strong {
+    font-size: 2.5rem !important;
+  }
+
+  /* Standings table: horizontal scroll container so columns aren't cut off */
+  .standings, .standings-wrap, .pot-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -1rem; /* bleed to screen edges */
+    padding: 0 1rem;
+  }
+  table {
+    font-size: 0.8rem !important;
+    min-width: 600px; /* force scroll when cramped */
+  }
+  th, td {
+    padding: 0.5rem 0.4rem !important;
+    white-space: nowrap;
+  }
+
+  /* Hide less-critical columns on small screens. Adjust classes to match your actual markup. */
+  th.col-correct-team, td.col-correct-team,
+  th.col-correct-player, td.col-correct-player,
+  th.col-position, td.col-position {
+    display: none !important;
+  }
+
+  /* Main padding: reduce */
+  main { padding: 1rem !important; }
+
+  /* Brand mark: keep visible but smaller */
+  .brand-mark, .brand { transform: scale(0.85); transform-origin: left center; }
+}
+
+/* Extra-small phones */
+@media (max-width: 420px) {
+  h1.title, .masthead h1 {
+    font-size: clamp(1.7rem, 8vw, 2.2rem) !important;
+  }
+  .standings-header, .pot-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0.3rem;
+  }
+}
+</style>
 </head>
 <body>
 
