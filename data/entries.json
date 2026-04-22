@@ -1198,6 +1198,211 @@
     }
   ],
   "tradePredictions": []
+}, {
+  "id": "shithead-moanf7q1",
+  "name": "Shithead",
+  "submittedAt": "2026-04-22T22:53:08.953Z",
+  "picks": [
+    {
+      "pick": 1,
+      "team": "LV",
+      "player": "Fernando Mendoza",
+      "position": "QB"
+    },
+    {
+      "pick": 2,
+      "team": "NYJ",
+      "player": "Arvell Reese",
+      "position": "LB"
+    },
+    {
+      "pick": 3,
+      "team": "ARI",
+      "player": "David Bailey",
+      "position": "EDGE"
+    },
+    {
+      "pick": 4,
+      "team": "TEN",
+      "player": "Francis Mauigoa",
+      "position": "OT"
+    },
+    {
+      "pick": 5,
+      "team": "NYG",
+      "player": "Sonny Styles",
+      "position": "LB"
+    },
+    {
+      "pick": 6,
+      "team": "CLE",
+      "player": "Jeremiyah Love",
+      "position": "RB"
+    },
+    {
+      "pick": 7,
+      "team": "WAS",
+      "player": "Caleb Downs",
+      "position": "S"
+    },
+    {
+      "pick": 8,
+      "team": "NO",
+      "player": "Jordyn Tyson",
+      "position": "WR"
+    },
+    {
+      "pick": 9,
+      "team": "KC",
+      "player": "Olaivavega Ioane",
+      "position": "OG"
+    },
+    {
+      "pick": 10,
+      "team": "NYG",
+      "player": "Mansoor Delane",
+      "position": "CB"
+    },
+    {
+      "pick": 11,
+      "team": "MIA",
+      "player": "Rueben Bain Jr.",
+      "position": "EDGE"
+    },
+    {
+      "pick": 12,
+      "team": "DAL",
+      "player": "Monroe Freeling",
+      "position": "OT"
+    },
+    {
+      "pick": 13,
+      "team": "LAR",
+      "player": "Kadyn Proctor",
+      "position": "OT"
+    },
+    {
+      "pick": 14,
+      "team": "BAL",
+      "player": "Spencer Fano",
+      "position": "OT"
+    },
+    {
+      "pick": 15,
+      "team": "TB",
+      "player": "Dillon Thieneman",
+      "position": "S"
+    },
+    {
+      "pick": 16,
+      "team": "NYJ",
+      "player": "Omar Cooper Jr.",
+      "position": "WR"
+    },
+    {
+      "pick": 17,
+      "team": "DET",
+      "player": "Kenyon Sadiq",
+      "position": "TE"
+    },
+    {
+      "pick": 18,
+      "team": "MIN",
+      "player": "Carnell Tate",
+      "position": "WR"
+    },
+    {
+      "pick": 19,
+      "team": "CAR",
+      "player": "Avieon Terrell",
+      "position": "CB"
+    },
+    {
+      "pick": 20,
+      "team": "DAL",
+      "player": "Emmanuel McNeil-Warren",
+      "position": "S"
+    },
+    {
+      "pick": 21,
+      "team": "PIT",
+      "player": "Kayden McDonald",
+      "position": "DT"
+    },
+    {
+      "pick": 22,
+      "team": "LAC",
+      "player": "Cashius Howell",
+      "position": "EDGE"
+    },
+    {
+      "pick": 23,
+      "team": "PHI",
+      "player": "Emmanuel Pregnon",
+      "position": "OG"
+    },
+    {
+      "pick": 24,
+      "team": "CLE",
+      "player": "Mike Washington Jr.",
+      "position": "RB"
+    },
+    {
+      "pick": 25,
+      "team": "CHI",
+      "player": "Anthony Hill Jr.",
+      "position": "LB"
+    },
+    {
+      "pick": 26,
+      "team": "BUF",
+      "player": "KC Concepcion",
+      "position": "WR"
+    },
+    {
+      "pick": 27,
+      "team": "SF",
+      "player": "Ty Simpson",
+      "position": "QB"
+    },
+    {
+      "pick": 28,
+      "team": "HOU",
+      "player": "Chase Bisontis",
+      "position": "OG"
+    },
+    {
+      "pick": 29,
+      "team": "KC",
+      "player": "Jadarian Price",
+      "position": "RB"
+    },
+    {
+      "pick": 30,
+      "team": "MIA",
+      "player": "Gennings Dunker",
+      "position": "OT"
+    },
+    {
+      "pick": 31,
+      "team": "NE",
+      "player": "Germie Bernard",
+      "position": "WR"
+    },
+    {
+      "pick": 32,
+      "team": "SEA",
+      "player": "Max Klare",
+      "position": "TE"
+    }
+  ],
+  "tradePredictions": [
+    {
+      "fromTeam": "ARI",
+      "toTeam": "SF",
+      "atPick": 27
+    }
+  ]
 }
   ]
 }
