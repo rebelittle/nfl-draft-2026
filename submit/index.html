@@ -138,6 +138,31 @@
     color: var(--ink-low); margin-top: 0.2rem;
     grid-column: 3; padding-left: 0.4rem;
   }
+   .scoring-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 1.25rem;
+  }
+  .scoring-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.8rem;
+  }
+  .scoring-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.4rem 0;
+    border-bottom: 1px dashed var(--line);
+    font-size: 0.85rem;
+  }
+  .scoring-row:last-child { border-bottom: none; }
+  .scoring-row .pts {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--accent);
+  }
 
   /* TRADES SECTION */
   .trades-list { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem; }
@@ -333,6 +358,11 @@
     </div>
     <button class="btn-submit" id="generateBtn" disabled>Generate Entry</button>
   </div>
+
+   <div class="scoring-card">
+      <h3>Scoring</h3>
+      <div id="scoringList"></div>
+    </div>
 
   <!-- Step 4: Result -->
   <div class="result-panel" id="resultPanel">
