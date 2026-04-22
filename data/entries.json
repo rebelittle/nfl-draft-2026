@@ -1,0 +1,44 @@
+{
+  "entries": [
+    {
+      "id": "reagan",
+      "name": "Reagan",
+      "submittedAt": "2026-04-22T21:00:00Z",
+      "picks": [
+        { "pick": 1,  "team": "LV",  "player": "Fernando Mendoza",       "position": "QB" },
+        { "pick": 2,  "team": "NYJ", "player": "Arvell Reese",           "position": "LB" },
+        { "pick": 3,  "team": "ARI", "player": "David Bailey",           "position": "EDGE" },
+        { "pick": 4,  "team": "TEN", "player": "Jeremiyah Love",         "position": "RB" },
+        { "pick": 5,  "team": "NYG", "player": "Sonny Styles",           "position": "LB" },
+        { "pick": 6,  "team": "CLE", "player": "Spencer Fano",           "position": "OT" },
+        { "pick": 7,  "team": "WAS", "player": "Carnell Tate",           "position": "WR" },
+        { "pick": 8,  "team": "NO",  "player": "Jordyn Tyson",           "position": "WR" },
+        { "pick": 9,  "team": "KC",  "player": "Rueben Bain Jr.",        "position": "EDGE" },
+        { "pick": 10, "team": "NYG", "player": "Caleb Downs",            "position": "SAF" },
+        { "pick": 11, "team": "MIA", "player": "Francis Mauigoa",        "position": "OT" },
+        { "pick": 12, "team": "DAL", "player": "Mansoor Delane",         "position": "CB" },
+        { "pick": 13, "team": "LAR", "player": "Makai Lemon",            "position": "WR" },
+        { "pick": 14, "team": "BAL", "player": "Olaivavega Ioane",       "position": "IOL" },
+        { "pick": 15, "team": "TB",  "player": "Akheem Mesidor",         "position": "EDGE" },
+        { "pick": 16, "team": "NYJ", "player": "Jermod McCoy",           "position": "CB" },
+        { "pick": 17, "team": "DET", "player": "Kadyn Proctor",          "position": "OT" },
+        { "pick": 18, "team": "MIN", "player": "Dillon Thieneman",       "position": "SAF" },
+        { "pick": 19, "team": "CAR", "player": "Kenyon Sadiq",           "position": "TE" },
+        { "pick": 20, "team": "DAL", "player": "Keldric Faulk",          "position": "EDGE" },
+        { "pick": 21, "team": "PIT", "player": "Omar Cooper Jr.",        "position": "WR" },
+        { "pick": 22, "team": "LAC", "player": "T.J. Parker",            "position": "EDGE" },
+        { "pick": 23, "team": "PHI", "player": "Blake Miller",           "position": "OT" },
+        { "pick": 24, "team": "CLE", "player": "KC Concepcion",          "position": "WR" },
+        { "pick": 25, "team": "CHI", "player": "Emmanuel McNeil-Warren", "position": "SAF" },
+        { "pick": 26, "team": "BUF", "player": "Kayden McDonald",        "position": "IDL" },
+        { "pick": 27, "team": "SF",  "player": "Caleb Lomu",             "position": "OT" },
+        { "pick": 28, "team": "HOU", "player": "Chase Bisontis",         "position": "IOL" },
+        { "pick": 29, "team": "KC",  "player": "Chris Johnson",          "position": "CB" },
+        { "pick": 30, "team": "MIA", "player": "Avieon Terrell",         "position": "CB" },
+        { "pick": 31, "team": "NE",  "player": "Max Iheanachor",         "position": "OT" },
+        { "pick": 32, "team": "SEA", "player": "Jadarian Price",         "position": "RB" }
+      ],
+      "tradePredictions": []
+    }
+  ]
+}

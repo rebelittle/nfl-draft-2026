@@ -1,0 +1,10 @@
+{
+  "rules": [
+    { "id": "team_player",      "label": "Correct Team + Player",              "points": 5 },
+    { "id": "player_number",    "label": "Correct Player + Correct Number",    "points": 4 },
+    { "id": "position_team",    "label": "Correct Position + Correct Team",    "points": 2 },
+    { "id": "player_round1",    "label": "Correct Player in 1st Round",        "points": 1 },
+    { "id": "trade_one",        "label": "Correct Team Trade (one team)",      "points": 6 },
+    { "id": "trade_both",       "label": "Correct Team Trade (both teams)",    "points": 10 }
+  ]
+}
