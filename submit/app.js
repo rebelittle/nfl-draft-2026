@@ -195,20 +195,6 @@ function generateEntry() {
   showResult(entry);
 }
 
-const mailtoBody = encodeURIComponent(
-  `New 2026 NFL Draft Pool entry from ${entry.name}\n\n` +
-  `--- JSON (copy everything between the lines into entries.json) ---\n\n` +
-  jsonStr +
-  `\n\n--- end ---\n\n` +
-  `Venmo sent? [ ] yes  [ ] no\n` +
-  `Notes:\n`
-);
-const mailtoSubject = encodeURIComponent(`NFL Draft Pool Entry: ${entry.name}`);
-const mailtoUrl = `mailto:YOUR_EMAIL@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
-
-// Attach to a button:
-document.getElementById('emailBtn').href = mailtoUrl;
-
 function showResult(entry) {
   const panel = document.getElementById('resultPanel');
   panel.classList.add('show');
@@ -227,6 +213,18 @@ function showResult(entry) {
     a.remove();
     URL.revokeObjectURL(url);
   };
+
+  const mailtoBody = encodeURIComponent(
+    `New 2026 NFL Draft Pool entry from ${entry.name}\n\n` +
+    `--- JSON (copy everything between the lines into entries.json) ---\n\n` +
+    jsonStr +
+    `\n\n--- end ---\n\n` +
+    `Venmo sent? [ ] yes  [ ] no\n` +
+    `Notes:\n`
+  );
+  const mailtoSubject = encodeURIComponent(`NFL Draft Pool Entry: ${entry.name}`);
+  document.getElementById('emailBtn').href =
+    `mailto:reaganlittle05@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
 
   const venmoNote = encodeURIComponent(`2026 NFL Draft Pool entry: ${entry.name}`);
   const venmoUrl = `https://account.venmo.com/payment-link?audience=private&amount=${ENTRY_FEE}&note=${venmoNote}&recipients=${VENMO_USER}&txn=pay`;
