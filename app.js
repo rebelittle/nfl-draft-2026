@@ -142,26 +142,6 @@ function renderLeaderboard() {
   `).join('');
 }
 
-  body.innerHTML = state.results.map((r, idx) => `
-    <tr class="clickable rank-${idx + 1}" onclick="openDetail('${r.entry.id}')">
-      <td class="rank">${idx + 1}</td>
-      ...rest of your existing row template...
-    </tr>
-  `).join('');
-}
-
-  body.innerHTML = state.results.map((r, idx) => `
-    <tr class="clickable rank-${idx + 1}" onclick="openDetail('${r.entry.id}')">
-      <td class="rank">${idx + 1}</td>
-      <td class="name">${r.entry.name}</td>
-      <td class="num">${r.hits}</td>
-      <td class="num">${r.correctTeams}</td>
-      <td class="num">${r.correctPlayers}</td>
-      <td class="points">${r.total}</td>
-    </tr>
-  `).join('');
-}
-
 function renderPickGrid() {
   const grid = document.getElementById('pickGrid');
   const onClockPick = (state.actuals.picks.find(p => !ScoringEngine.isPickMade(p)) || {}).pick;
