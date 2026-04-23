@@ -14,6 +14,12 @@ const state = {
   results: null
 };
 
+const REVEAL_TIME = new Date('2026-04-23T20:00:00-04:00'); // 8pm ET Thursday April 23
+
+function entriesAreHidden() {
+  return new Date() < REVEAL_TIME;
+}
+
 async function loadData() {
   const bust = `?t=${Date.now()}`;
   const [actualRes, entriesRes, scoringRes] = await Promise.all([
