@@ -200,206 +200,55 @@
       ],
       "tradePredictions": []
     },
-    {
-      "id": "cam",
-      "name": "Cam",
-      "submittedAt": "2026-04-22T00:00:00Z",
-      "picks": [
-        {
-          "pick": 1,
-          "team": "LV",
-          "player": "Fernando Mendoza",
-          "position": "QB"
-        },
-        {
-          "pick": 2,
-          "team": "NYJ",
-          "player": "Arvell Reese",
-          "position": "LB"
-        },
-        {
-          "pick": 3,
-          "team": "ARI",
-          "player": "Francis Mauigoa",
-          "position": "OT"
-        },
-        {
-          "pick": 4,
-          "team": "TEN",
-          "player": "Jeremiyah Love",
-          "position": "RB"
-        },
-        {
-          "pick": 5,
-          "team": "NYG",
-          "player": "Sonny Styles",
-          "position": "LB"
-        },
-        {
-          "pick": 6,
-          "team": "CLE",
-          "player": "Carnell Tate",
-          "position": "WR"
-        },
-        {
-          "pick": 7,
-          "team": "KC",
-          "player": "David Bailey",
-          "position": "EDGE"
-        },
-        {
-          "pick": 8,
-          "team": "NO",
-          "player": "Rueben Bain Jr.",
-          "position": "EDGE"
-        },
-        {
-          "pick": 9,
-          "team": "WAS",
-          "player": "Jordyn Tyson",
-          "position": "WR"
-        },
-        {
-          "pick": 10,
-          "team": "NYG",
-          "player": "Caleb Downs",
-          "position": "SAF"
-        },
-        {
-          "pick": 11,
-          "team": "MIA",
-          "player": "Mansoor Delane",
-          "position": "CB"
-        },
-        {
-          "pick": 12,
-          "team": "PIT",
-          "player": "Olaivavega Ioane",
-          "position": "IOL"
-        },
-        {
-          "pick": 13,
-          "team": "LAR",
-          "player": "Makai Lemon",
-          "position": "WR"
-        },
-        {
-          "pick": 14,
-          "team": "BAL",
-          "player": "Spencer Fano",
-          "position": "OT"
-        },
-        {
-          "pick": 15,
-          "team": "PHI",
-          "player": "Dillon Thieneman",
-          "position": "SAF"
-        },
-        {
-          "pick": 16,
-          "team": "NYJ",
-          "player": "Jermod McCoy",
-          "position": "CB"
-        },
-        {
-          "pick": 17,
-          "team": "DET",
-          "player": "Kadyn Proctor",
-          "position": "OT"
-        },
-        {
-          "pick": 18,
-          "team": "MIN",
-          "player": "Emmanuel McNeil-Warren",
-          "position": "SAF"
-        },
-        {
-          "pick": 19,
-          "team": "CAR",
-          "player": "Kenyon Sadiq",
-          "position": "TE"
-        },
-        {
-          "pick": 20,
-          "team": "DAL",
-          "player": "Avieon Terrell",
-          "position": "CB"
-        },
-        {
-          "pick": 21,
-          "team": "DAL",
-          "player": "C.J. Allen",
-          "position": "LB"
-        },
-        {
-          "pick": 22,
-          "team": "LAC",
-          "player": "Kayden McDonald",
-          "position": "IDL"
-        },
-        {
-          "pick": 23,
-          "team": "TB",
-          "player": "Keldric Faulk",
-          "position": "EDGE"
-        },
-        {
-          "pick": 24,
-          "team": "CLE",
-          "player": "Monroe Freeling",
-          "position": "OT"
-        },
-        {
-          "pick": 25,
-          "team": "CHI",
-          "player": "Peter Woods",
-          "position": "IDL"
-        },
-        {
-          "pick": 26,
-          "team": "BUF",
-          "player": "T.J. Parker",
-          "position": "EDGE"
-        },
-        {
-          "pick": 27,
-          "team": "SF",
-          "player": "Akheem Mesidor",
-          "position": "EDGE"
-        },
-        {
-          "pick": 28,
-          "team": "LV",
-          "player": "Blake Miller",
-          "position": "OT"
-        },
-        {
-          "pick": 29,
-          "team": "KC",
-          "player": "Colton Hood",
-          "position": "CB"
-        },
-        {
-          "pick": 30,
-          "team": "MIA",
-          "player": "Omar Cooper Jr.",
-          "position": "WR"
-        },
-        {
-          "pick": 31,
-          "team": "NE",
-          "player": "Max Iheanachor",
-          "position": "OT"
-        },
-        {
-          "pick": 32,
-          "team": "ARI",
-          "player": "Ty Simpson",
-          "position": "QB"
-        }
-      ],
-      "tradePredictions": []
-    },
+   {
+  "id": "cam",
+  "name": "Cam",
+  "submittedAt": "2026-04-22T00:00:00Z",
+  "picks": [
+    { "pick": 1,  "team": "LV",  "player": "Fernando Mendoza",       "position": "QB" },
+    { "pick": 2,  "team": "NYJ", "player": "Arvell Reese",           "position": "LB" },
+    { "pick": 3,  "team": "ARI", "player": "Francis Mauigoa",        "position": "OT" },
+    { "pick": 4,  "team": "TEN", "player": "Jeremiyah Love",         "position": "RB" },
+    { "pick": 5,  "team": "NYG", "player": "Sonny Styles",           "position": "LB" },
+    { "pick": 6,  "team": "CLE", "player": "Carnell Tate",           "position": "WR" },
+    { "pick": 7,  "team": "KC",  "player": "David Bailey",           "position": "EDGE" },
+    { "pick": 8,  "team": "NO",  "player": "Rueben Bain Jr.",        "position": "EDGE" },
+    { "pick": 9,  "team": "WAS", "player": "Jordyn Tyson",           "position": "WR" },
+    { "pick": 10, "team": "NYG", "player": "Caleb Downs",            "position": "SAF" },
+    { "pick": 11, "team": "MIA", "player": "Mansoor Delane",         "position": "CB" },
+    { "pick": 12, "team": "PIT", "player": "Olaivavega Ioane",       "position": "IOL" },
+    { "pick": 13, "team": "LAR", "player": "Makai Lemon",            "position": "WR" },
+    { "pick": 14, "team": "BAL", "player": "Spencer Fano",           "position": "OT" },
+    { "pick": 15, "team": "PHI", "player": "Dillon Thieneman",       "position": "SAF" },
+    { "pick": 16, "team": "NYJ", "player": "Jermod McCoy",           "position": "CB" },
+    { "pick": 17, "team": "DET", "player": "Kadyn Proctor",          "position": "OT" },
+    { "pick": 18, "team": "MIN", "player": "Emmanuel McNeil-Warren", "position": "SAF" },
+    { "pick": 19, "team": "CAR", "player": "Kenyon Sadiq",           "position": "TE" },
+    { "pick": 20, "team": "DAL", "player": "Avieon Terrell",         "position": "CB" },
+    { "pick": 21, "team": "DAL", "player": "C.J. Allen",             "position": "LB" },
+    { "pick": 22, "team": "LAC", "player": "Kayden McDonald",        "position": "IDL" },
+    { "pick": 23, "team": "TB",  "player": "Keldric Faulk",          "position": "EDGE" },
+    { "pick": 24, "team": "CLE", "player": "Monroe Freeling",        "position": "OT" },
+    { "pick": 25, "team": "CHI", "player": "Peter Woods",            "position": "IDL" },
+    { "pick": 26, "team": "BUF", "player": "T.J. Parker",            "position": "EDGE" },
+    { "pick": 27, "team": "SF",  "player": "Akheem Mesidor",         "position": "EDGE" },
+    { "pick": 28, "team": "LV",  "player": "Blake Miller",           "position": "OT" },
+    { "pick": 29, "team": "KC",  "player": "Colton Hood",            "position": "CB" },
+    { "pick": 30, "team": "MIA", "player": "Omar Cooper Jr.",        "position": "WR" },
+    { "pick": 31, "team": "NE",  "player": "Max Iheanachor",         "position": "OT" },
+    { "pick": 32, "team": "ARI", "player": "Ty Simpson",             "position": "QB" }
+  ],
+  "tradePredictions": [
+    { "fromTeam": "WAS", "toTeam": "KC",  "atPick": 7 },
+    { "fromTeam": "KC",  "toTeam": "WAS", "atPick": 9 },
+    { "fromTeam": "DAL", "toTeam": "PIT", "atPick": 12 },
+    { "fromTeam": "TB",  "toTeam": "PHI", "atPick": 15 },
+    { "fromTeam": "PIT", "toTeam": "DAL", "atPick": 21 },
+    { "fromTeam": "PHI", "toTeam": "TB",  "atPick": 23 },
+    { "fromTeam": "HOU", "toTeam": "LV",  "atPick": 28 },
+    { "fromTeam": "SEA", "toTeam": "ARI", "atPick": 32 }
+  ]
+},
     {
       "id": "chatgpt",
       "name": "ChatGPT",
