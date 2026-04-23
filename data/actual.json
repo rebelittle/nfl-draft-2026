@@ -2,13 +2,7 @@
   "draftName": "2026 NFL Draft",
   "lastUpdated": "2026-04-23T00:00:00Z",
   "picks": [
-    {
-      "pick": 1,
-      "team": null,
-      "player": null,
-      "position": null,
-      "tradeFrom": null
-    },
+    { "pick": 1, "team": "LV", "player": "Fernando Mendoza", "position": "QB", "tradeFrom": null },
     {
       "pick": 2,
       "team": null,
