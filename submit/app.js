@@ -177,6 +177,12 @@ function generateEntry() {
       atPick: t.atPick
     }));
 
+  // Apply trade-shifted team ownership to picks (matches Cam-style scoring)
+  tradePredictions.forEach(t => {
+    const pick = picks.find(p => p.pick === t.atPick);
+    if (pick) pick.team = t.toTeam;
+  });
+
   const entry = {
     id: name.toLowerCase().replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '')
         + '-' + Date.now().toString(36),
