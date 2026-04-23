@@ -195,6 +195,20 @@ function generateEntry() {
   showResult(entry);
 }
 
+const mailtoBody = encodeURIComponent(
+  `New 2026 NFL Draft Pool entry from ${entry.name}\n\n` +
+  `--- JSON (copy everything between the lines into entries.json) ---\n\n` +
+  jsonStr +
+  `\n\n--- end ---\n\n` +
+  `Venmo sent? [ ] yes  [ ] no\n` +
+  `Notes:\n`
+);
+const mailtoSubject = encodeURIComponent(`NFL Draft Pool Entry: ${entry.name}`);
+const mailtoUrl = `mailto:YOUR_EMAIL@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+// Attach to a button:
+document.getElementById('emailBtn').href = mailtoUrl;
+
 function showResult(entry) {
   const panel = document.getElementById('resultPanel');
   panel.classList.add('show');
