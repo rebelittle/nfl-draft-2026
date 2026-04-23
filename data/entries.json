@@ -1258,6 +1258,256 @@
       "atPick": 15
     }
   ]
+}, {
+  "id": "nick-carbuccia-moayqjb6",
+  "name": "Nick Carbuccia",
+  "submittedAt": "2026-04-23T04:09:52.962Z",
+  "picks": [
+    {
+      "pick": 1,
+      "team": "LV",
+      "player": "Fernando Mendoza",
+      "position": "QB"
+    },
+    {
+      "pick": 2,
+      "team": "NYJ",
+      "player": "David Bailey",
+      "position": "EDGE"
+    },
+    {
+      "pick": 3,
+      "team": "ARI",
+      "player": "Francis Mauigoa",
+      "position": "OT"
+    },
+    {
+      "pick": 4,
+      "team": "DAL",
+      "player": "Arvell Reese",
+      "position": "LB"
+    },
+    {
+      "pick": 5,
+      "team": "NYG",
+      "player": "Sonny Styles",
+      "position": "LB"
+    },
+    {
+      "pick": 6,
+      "team": "CLE",
+      "player": "Carnell Tate",
+      "position": "WR"
+    },
+    {
+      "pick": 7,
+      "team": "WAS",
+      "player": "Caleb Downs",
+      "position": "S"
+    },
+    {
+      "pick": 8,
+      "team": "NO",
+      "player": "Rueben Bain Jr.",
+      "position": "EDGE"
+    },
+    {
+      "pick": 9,
+      "team": "KC",
+      "player": "Jordyn Tyson",
+      "position": "WR"
+    },
+    {
+      "pick": 10,
+      "team": "NYG",
+      "player": "Jeremiyah Love",
+      "position": "RB"
+    },
+    {
+      "pick": 11,
+      "team": "MIA",
+      "player": "Mansoor Delane",
+      "position": "CB"
+    },
+    {
+      "pick": 12,
+      "team": "TEN",
+      "player": "Makai Lemon",
+      "position": "WR"
+    },
+    {
+      "pick": 13,
+      "team": "LAR",
+      "player": "Spencer Fano",
+      "position": "OT"
+    },
+    {
+      "pick": 14,
+      "team": "BAL",
+      "player": "Olaivavega Ioane",
+      "position": "OG"
+    },
+    {
+      "pick": 15,
+      "team": "TB",
+      "player": "Jermod McCoy",
+      "position": "CB"
+    },
+    {
+      "pick": 16,
+      "team": "NYJ",
+      "player": "Omar Cooper Jr.",
+      "position": "WR"
+    },
+    {
+      "pick": 17,
+      "team": "DET",
+      "player": "Monroe Freeling",
+      "position": "OT"
+    },
+    {
+      "pick": 18,
+      "team": "MIN",
+      "player": "Dillon Thieneman",
+      "position": "S"
+    },
+    {
+      "pick": 19,
+      "team": "PHI",
+      "player": "Emmanuel McNeil-Warren",
+      "position": "S"
+    },
+    {
+      "pick": 20,
+      "team": "TEN",
+      "player": "Keldric Faulk",
+      "position": "EDGE"
+    },
+    {
+      "pick": 21,
+      "team": "KC",
+      "player": "Akheem Mesidor",
+      "position": "EDGE"
+    },
+    {
+      "pick": 22,
+      "team": "LAC",
+      "player": "Avieon Terrell",
+      "position": "CB"
+    },
+    {
+      "pick": 23,
+      "team": "CAR",
+      "player": "Blake Miller",
+      "position": "OT"
+    },
+    {
+      "pick": 24,
+      "team": "CLE",
+      "player": "Kadyn Proctor",
+      "position": "OT"
+    },
+    {
+      "pick": 25,
+      "team": "NE",
+      "player": "Kenyon Sadiq",
+      "position": "TE"
+    },
+    {
+      "pick": 26,
+      "team": "BUF",
+      "player": "Denzel Boston",
+      "position": "WR"
+    },
+    {
+      "pick": 27,
+      "team": "ARI",
+      "player": "Ty Simpson",
+      "position": "QB"
+    },
+    {
+      "pick": 28,
+      "team": "HOU",
+      "player": "Kayden McDonald",
+      "position": "DT"
+    },
+    {
+      "pick": 29,
+      "team": "PIT",
+      "player": "CJ Allen",
+      "position": "LB"
+    },
+    {
+      "pick": 30,
+      "team": "MIA",
+      "player": "Caleb Lomu",
+      "position": "OT"
+    },
+    {
+      "pick": 31,
+      "team": "CHI",
+      "player": "Peter Woods",
+      "position": "DT"
+    },
+    {
+      "pick": 32,
+      "team": "SEA",
+      "player": "Cashius Howell",
+      "position": "EDGE"
+    }
+  ],
+  "tradePredictions": [
+    {
+      "fromTeam": "DAL",
+      "toTeam": "TEN",
+      "atPick": 12
+    },
+    {
+      "fromTeam": "DAL",
+      "toTeam": "TEN",
+      "atPick": 20
+    },
+    {
+      "fromTeam": "TEN",
+      "toTeam": "DAL",
+      "atPick": 4
+    },
+    {
+      "fromTeam": "CAR",
+      "toTeam": "PHI",
+      "atPick": 19
+    },
+    {
+      "fromTeam": "PHI",
+      "toTeam": "CAR",
+      "atPick": 23
+    },
+    {
+      "fromTeam": "PIT",
+      "toTeam": "KC",
+      "atPick": 21
+    },
+    {
+      "fromTeam": "KC",
+      "toTeam": "PIT",
+      "atPick": 29
+    },
+    {
+      "fromTeam": "CHI",
+      "toTeam": "NE",
+      "atPick": 25
+    },
+    {
+      "fromTeam": "NE",
+      "toTeam": "CHI",
+      "atPick": 31
+    },
+    {
+      "fromTeam": "SF",
+      "toTeam": "ARI",
+      "atPick": 27
+    }
+  ]
 }
   ]
 }
