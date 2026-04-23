@@ -107,11 +107,37 @@ function renderScoringCard() {
 }
 
 function renderLeaderboard() {
+  const tbody = document.querySelector('#leaderboard tbody');
+
+  if (entriesAreHidden()) {
+    const msUntil = REVEAL_TIME - new Date();
+    const hrs = Math.floor(msUntil / 3600000);
+    const mins = Math.floor((msUntil % 3600000) / 60000);
+    tbody.innerHTML = `
+      <tr><td colspan="99" style="text-align:center; padding:3rem; color:var(--ink-dim); font-family:var(--font-mono);">
+        <div style="font-family:var(--font-display); font-size:2rem; color:var(--accent); margin-bottom:0.5rem;">ENTRIES LOCKED</div>
+        Slates revealed when the draft begins.<br>
+        <span style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase;">
+          Unlocks in ${hrs}h ${mins}m &middot; Thursday 4/23 at 8:00 PM ET
+        </span><br><br>
+        <span style="color:var(--accent); font-size:0.9rem;">${state.results.length} entries received</span>
+      </td></tr>`;
+    return;
+  }
+
   const body = document.getElementById('leaderboardBody');
   if (!state.results.length) {
     body.innerHTML = `<tr><td colspan="6" style="text-align:center; padding: 2rem; color: var(--ink-low);">No entries yet</td></tr>`;
     return;
   }
+
+  body.innerHTML = state.results.map((r, idx) => `
+    <tr class="clickable rank-${idx + 1}" onclick="openDetail('${r.entry.id}')">
+      <td class="rank">${idx + 1}</td>
+      ...rest of your existing row template...
+    </tr>
+  `).join('');
+}
 
   body.innerHTML = state.results.map((r, idx) => `
     <tr class="clickable rank-${idx + 1}" onclick="openDetail('${r.entry.id}')">
