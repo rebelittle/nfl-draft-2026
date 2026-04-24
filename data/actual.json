@@ -36,7 +36,7 @@
       "team": "KC",
       "player": null,
       "position": null,
-      "tradeFrom": CLE
+      "tradeFrom": "CLE"
     },
     {
       "pick": 7,
