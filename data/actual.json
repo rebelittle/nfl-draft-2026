@@ -131,10 +131,10 @@
     },
     {
       "pick": 20,
-      "team": "DAL",
-      "player": null,
-      "position": null,
-      "tradeFrom": null
+      "team": "PHI",
+      "player": "Makai Lemon",
+      "position": "WR",
+      "tradeFrom": "DAL"
     },
     {
       "pick": 21,
@@ -152,10 +152,10 @@
     },
     {
       "pick": 23,
-      "team": "PHI",
+      "team": "DAL",
       "player": null,
       "position": null,
-      "tradeFrom": null
+      "tradeFrom": "PHI"
     },
     {
       "pick": 24,
