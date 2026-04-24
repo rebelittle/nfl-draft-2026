@@ -54,10 +54,10 @@
     },
     {
       "pick": 9,
-      "team": "KC",
+      "team": "CLE",
       "player": null,
       "position": null,
-      "tradeFrom": null
+      "tradeFrom": "KC"
     },
     {
       "pick": 10,
