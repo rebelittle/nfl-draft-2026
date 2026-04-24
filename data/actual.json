@@ -68,17 +68,17 @@
     },
     {
       "pick": 11,
-      "team": "MIA",
-      "player": null,
-      "position": null,
-      "tradeFrom": null
-    },
-    {
-      "pick": 12,
       "team": "DAL",
       "player": null,
       "position": null,
-      "tradeFrom": null
+      "tradeFrom": "MIA"
+    },
+    {
+      "pick": 12,
+      "team": "MIA",
+      "player": null,
+      "position": null,
+      "tradeFrom": "DAL"
     },
     {
       "pick": 13,
