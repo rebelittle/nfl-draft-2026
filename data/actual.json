@@ -111,16 +111,16 @@
     {
       "pick": 17,
       "team": "DET",
-      "player": null,
-      "position": null,
+      "player": "Blake Miller",
+      "position": "OT",
       "tradeFrom": null
     },
     {
       "pick": 18,
-      "team": "MIA",
-      "player": null,
-      "position": null,
-      "tradeFrom": null
+      "team": "MIN",
+      "player": "Caleb Banks",
+      "position": "DT",
+      "tradeFrom": "MIA"
     },
     {
       "pick": 19,
