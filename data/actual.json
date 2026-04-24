@@ -181,8 +181,8 @@
     {
       "pick": 27,
       "team": "MIA",
-      "player": null,
-      "position": null,
+      "player": "Chris Johnson",
+      "position": "CB",
       "tradeFrom": "SF"
     },
     {
