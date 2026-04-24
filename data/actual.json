@@ -173,24 +173,24 @@
     },
     {
       "pick": 26,
-      "team": "BUF",
-      "player": null,
-      "position": null,
-      "tradeFrom": null
-    },
-    {
-      "pick": 27,
-      "team": "SF",
-      "player": null,
-      "position": null,
-      "tradeFrom": null
-    },
-    {
-      "pick": 28,
       "team": "HOU",
       "player": null,
       "position": null,
-      "tradeFrom": null
+      "tradeFrom": "BUF"
+    },
+    {
+      "pick": 27,
+      "team": "MIA",
+      "player": null,
+      "position": null,
+      "tradeFrom": "SF"
+    },
+    {
+      "pick": 28,
+      "team": "BUF",
+      "player": null,
+      "position": null,
+      "tradeFrom": "HOU"
     },
     {
       "pick": 29,
