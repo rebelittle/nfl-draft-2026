@@ -5,14 +5,14 @@
     { "pick": 1, "team": "LV", "player": "Fernando Mendoza", "position": "QB", "tradeFrom": null },
     {
       "pick": 2,
-      "team": null,
+      "team": "NYJ",
       "player": null,
       "position": null,
       "tradeFrom": null
     },
     {
       "pick": 3,
-      "team": null,
+      "team": "ARI",
       "player": null,
       "position": null,
       "tradeFrom": null
