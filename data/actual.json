@@ -201,10 +201,10 @@
     },
     {
       "pick": 30,
-      "team": "MIA",
+      "team": "SF",
       "player": null,
       "position": null,
-      "tradeFrom": null
+      "tradeFrom": "MIA"
     },
     {
       "pick": 31,
