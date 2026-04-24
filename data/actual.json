@@ -195,16 +195,16 @@
     {
       "pick": 29,
       "team": "KC",
-      "player": null,
-      "position": null,
+      "player": "Peter Woods",
+      "position": "DT",
       "tradeFrom": null
     },
     {
       "pick": 30,
-      "team": "SF",
+      "team": "NYJ",
       "player": null,
       "position": null,
-      "tradeFrom": "MIA"
+      "tradeFrom": "SF"
     },
     {
       "pick": 31,
