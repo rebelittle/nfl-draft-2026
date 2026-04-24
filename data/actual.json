@@ -187,10 +187,10 @@
     },
     {
       "pick": 28,
-      "team": "BUF",
+      "team": "NE",
       "player": null,
       "position": null,
-      "tradeFrom": "HOU"
+      "tradeFrom": "BUF"
     },
     {
       "pick": 29,
@@ -208,10 +208,10 @@
     },
     {
       "pick": 31,
-      "team": "NE",
+      "team": "BUF",
       "player": null,
       "position": null,
-      "tradeFrom": null
+      "tradeFrom": "NE"
     },
     {
       "pick": 32,
