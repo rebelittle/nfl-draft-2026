@@ -208,10 +208,10 @@
     },
     {
       "pick": 31,
-      "team": "BUF",
-      "player": null,
-      "position": null,
-      "tradeFrom": "NE"
+      "team": "TEN",
+      "player": "Keldric Faulk",
+      "position": "EDGE",
+      "tradeFrom": "BUF"
     },
     {
       "pick": 32,
